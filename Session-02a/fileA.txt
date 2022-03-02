@@ -1,1 +1,2 @@
 This is the first file of git
+This is the new comment
