@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fotis2._1
+namespace Ses2b
 {
     internal class Program
     {
