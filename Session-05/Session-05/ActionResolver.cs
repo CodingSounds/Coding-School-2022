@@ -8,12 +8,12 @@ namespace Session_05
 {
     internal class ActionResolver
     {
-        public MessageLogger logger { get; set; }
+        public MessageLogger Logger { get; set; }
 
 
         public ActionResolver()
         {
-
+            Logger = new MessageLogger();
         }
         public string Execute(ActionEnum action )
         {
