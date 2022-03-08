@@ -14,7 +14,7 @@ namespace Session_04
 
         }
 
-        private int[] _array1 = { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
+        private int[] _array1 = { 0, -2, 1, 20, -31, 50, -4, 17, 100, 89 };
 
        public void SortMatrix()
         {
