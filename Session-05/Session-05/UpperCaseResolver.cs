@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Session_05
 {
-    internal class UppercaseResolver : AbstractResolver
+    public class UppercaseResolver : AbstractResolver
     {
         public UppercaseResolver()
         {
         }
-
+        
+        
 
         public string FindLongestWord(string[] words)
         {

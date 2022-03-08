@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Session_05
 {
-    internal class ActionResponse:ActionID
+    public class ActionResponse:ActionID
     {
-        Guid ResponsiveID { get; }
-        string Output { get; set; }
+        public Guid ResponsiveID { get; }
+        public string Output { get; set; }
 
         public ActionResponse()
         {

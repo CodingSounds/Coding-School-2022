@@ -10,7 +10,23 @@ namespace Session_05
     {
         static void Main(string[] args)
         {
-           
+           /* var x = new ActionID();
+            var y = new ActionRequest();
+            var z = new ActionResponse();
+            var r = new Message();
+            var s = new MessageLogger();
+            var w = new ActionEnum();
+            var t= new ReverseResolver();
+            var m = new ConvertResolver();
+            
+*/
+
+            
+            
+
+
+
+
         }
     }
 }

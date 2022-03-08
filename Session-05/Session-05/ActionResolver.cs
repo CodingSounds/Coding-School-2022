@@ -8,42 +8,52 @@ namespace Session_05
 {
     internal class ActionResolver
     {
-        public MessageLogger Logger { get; set; }
+        public MessageLogger Logger { get;  }
 
 
         public ActionResolver()
         {
             Logger = new MessageLogger();
         }
-        public string Execute(ActionEnum action )
+        public ActionResponse  Execute(ActionRequest request ,MessageLogger logger )
         {
-            switch (action)
+            ActionResponse response = new ActionResponse();
+            switch (request.Action)
             {
                 case ActionEnum.Convert:
-                    break;
+                    Logger.Write($"Using {nameof(ConvertResolver)}.");
+                    var x = new ConvertResolver();
+
+                    response.Output = x.Execute(request.Input, logger);
+                    return response;
+
                 case ActionEnum.UpperCase:
-                    break;
+                    Logger.Write($"Using {nameof(UppercaseResolver)}.");
+                    UppercaseResolver y= new UppercaseResolver();
+                    
+                    response.Output=y.Execute(request.Input,logger);
+                    return response ;
                 case ActionEnum.Reverse:
-                    break;
+
+                    Logger.Write($"Using {nameof(ReverseResolver)}.");
+
+                    var f=new ReverseResolver();
+
+
+                    response.Output = f.Execute(request.Input, logger);
+                    return response;
+                    
                 default:
-                    break;
+                    Logger.Write($"Invalid action type {request.Action}.");
+                    return null;
             }
 
 
 
 
-            return "0";
+            ;
         }
 
-        
-
-        //public string Execute(ActionRequest)
-        //{
-         //   return "df";
-        //}
-       // public int Execute(ActionRequest)
-       // {
-       //     return 0;
-       // }
+     
     }
 }

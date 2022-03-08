@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Session_05
 {
-    internal class ActionID
+    public class ActionID
     {
-        Guid RequestedID { get; set; }
+        public Guid RequestedID { get; set; }
         public ActionID()
         {
             RequestedID = Guid.NewGuid();
