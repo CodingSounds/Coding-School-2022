@@ -21,9 +21,10 @@ namespace Calculator
         }
         public decimal PowerOp()
         {
-             
+
             return (decimal)Math.Pow((double)Number1, (double)Number2);
 
-                }
+        }
     }
 }
+

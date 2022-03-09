@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    internal class Root
+    public class Root
     {
         public decimal Number1 { get; set; }
         public decimal Number2 { get; set; }
@@ -16,11 +16,11 @@ namespace Calculator
             Number2 = number2;
 
         }
-        
+
         public decimal Sqr()
         {
-            
-            return (decimal)Math.Sqrt( (double)Number1);
+
+            return (decimal)Math.Sqrt((double)Number1);
         }
 
 
