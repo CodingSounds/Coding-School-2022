@@ -90,6 +90,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractShowList.cs" />
+    <Compile Include="FormListChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListChange.Designer.cs">
+      <DependentUpon>FormListChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowListProfessor.cs" />
     <Compile Include="FormEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,11 +112,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowListStudents.cs" />
+    <Compile Include="ShowListUniversities.cs" />
     <EmbeddedResource Include="FormEdit.resx">
       <DependentUpon>FormEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInterface.resx">
       <DependentUpon>FormInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListChange.resx">
+      <DependentUpon>FormListChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -121,6 +134,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\UniversityLibrary.Professor.datasource" />
+    <None Include="Properties\DataSources\UniversityLibrary.Student.datasource" />
+    <None Include="Properties\DataSources\UniversityLibrary.University.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

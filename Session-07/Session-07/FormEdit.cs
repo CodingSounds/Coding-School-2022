@@ -20,6 +20,8 @@ namespace Session_07
         private bool _newItemOn;
 
         private bool _delete;
+
+        public string _textBack { get; set; }
         
 
 
@@ -61,6 +63,7 @@ namespace Session_07
         //Done load                     
         private void FormEdit_Load(object sender, EventArgs e)
         {
+            bindingSource1.DataSource = Students;
             _newItemOn = false;
             _delete = false;
             
@@ -70,18 +73,43 @@ namespace Session_07
 
             try
             {
+                
                 if (WhatKindOfObject == 1)
                 {
-                    ShowList_Universities(Universities);
+
+
+
+                    var _show = new ShowListUniversities();
+                    _show.form = this;
+                    _show.Universities = Universities;
+                    _show.Showing();
                 }
                 else if (WhatKindOfObject == 0)
                 {
-                    ShowList_Student(Students);
+                    /*bsStudents.DataSource = Students;
+                    bsStudents.DataMember = "Name";
+                    this.listOfObject.DataBindings.DefaultDataSourceUpdateMode.Equals(1);
+                    this.listOfObject.DataBindings.Add(new Binding("EditValue", bsStudents, "Name", true));
+                    */
+
+
+                    /*var _show = new ShowListStudents();
+                    _show.form = this;
+                    _show.Students = Students;
+                    _show.Showing();*/
+                    
+
+
                 }
                 else if (WhatKindOfObject == 2)
                 {
-                    ShowList_Professor(Professors);
+                    var _show = new ShowListProfessor();
+                    _show.form = this;
+                    _show.Professors = Professors;
+                    _show.Showing();
                 }
+
+
 
 
             }
@@ -138,6 +166,7 @@ namespace Session_07
                     Universities.RemoveAt(index_Click);
                     ShowList_Universities(Universities);
                 }
+                SaveData();
             }
             _delete= false;
 
@@ -546,100 +575,118 @@ namespace Session_07
 
         //Cant use forms objects
 
-        /*      public abstract class ShowObjectListAbstract : FormEdit
-              {
+        public abstract class ShowObjectListAbstract 
+        {
+            public FormEdit f { get; set; }
+            public ShowObjectListAbstract()
+            {
 
-                  public ShowObjectListAbstract()
-                  {
+            }
+            public abstract void ShowList();
+        }
 
 
-                  }
-                  public abstract void ShowList();
-              }
+        public class ShowStudentList : ShowObjectListAbstract
+        {
+            public List<Student> Students { get; set; }
 
+            
+            
 
-              public class ShowStudentList : ShowObjectListAbstract
-              {
-                  public List<Student> Students { get; set; }
+            public ShowStudentList()
+            {
+                
+            }
 
-                  public ShowStudentList()
-                  {
+            public override void ShowList()
+            {
 
-                  }
+                var x = 0;
 
-                  public override void ShowList()
-                  {
+                foreach (Student _student in Students)
+                {
+                    x++;
 
-                      var x = 0;
 
-                      foreach (Student _student in Students)
-                      {
-                          x++;
+                    if (_student.Name != "")
+                        x = 2;
+                    f.listOfObject.Items.Add(string.Format("{0}", _student.Name));
+                }
 
 
-                          if (_student.Name != "")
-                              x = 2;
-                          listOfItems.Items.Add(string.Format("{0}", _student.Name));
-                      }
+            }
 
 
-                  }
 
+        }
+        public class ShowProfessorList : ShowObjectListAbstract
+        {
+            public List<Person> Professors { get; set; }
+            public ShowProfessorList()
+            {
 
+            }
+            public override void ShowList()
+            {
 
-              }*/
+                var x = 0;
 
+                foreach (Professor _professor in Professors)
+                {
+                    x++;
 
 
+                    if (_professor.Name != "")
+                        x = 2;
+                    f.listOfObject.Items.Add(string.Format("{0}", _professor.Name));
+                }
 
 
+            }
+        }
 
+        private void listOfGrades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var _clicknumber = listOfGrades.SelectedIndex;
 
 
+            //EditMatrix(int _selectedIndex)
 
 
 
 
 
 
+        }
+        private void EditMatrix<T>(int _selectedIndex,T _matrixName)
+        {
+            var x = MessageBox.Show("Want to change value", "error", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
 
+            if (x == DialogResult.OK)
+            {
+                var t = new FormListChange();
+                t.ShowDialog();
+                _textBack = t.TextForward;
+                //listOfGrades.Items.Insert(_matrixName.SelectedIndex, _textBack);
 
+            }
+        }
 
+        private void grid1List(object sender, EventArgs e)
+        {
 
+        }
 
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
 
+        }
 
+        private void gridLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
     }
 
 
