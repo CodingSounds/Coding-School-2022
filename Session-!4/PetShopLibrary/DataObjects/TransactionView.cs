@@ -8,7 +8,7 @@ namespace PetShopLibrary.DataObjects
 {
     public class TransactionView
     {
-
+        private PetShopClass PetShopClass { get; set; }
         private PetShopManager _petShop { get; set; }
 
         public TransactionView(PetShopManager petshop)

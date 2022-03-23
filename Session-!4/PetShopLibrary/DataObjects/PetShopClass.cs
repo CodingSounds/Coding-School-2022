@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetShopLibrary.DataObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace PetShopLibrary
 {
-    [Serializable]
-    public class PetShop
+    //[Serializable]
+    public class PetShopClass
     {
+        public Guid Id { get; set; }    
+        public List<User> Users { get; set; }
         public List<Customer> Customers { get; set; }
         public List<Pet> Pets { get; set; }
         public List<Transaction> Transactions { get; set; }
@@ -16,7 +19,7 @@ namespace PetShopLibrary
         public List<PetFood> PetFoods { get; set; }
 
 
-        public PetShop()
+        public PetShopClass()
         {
             Customers = new List<Customer>();
             Pets = new List<Pet>();

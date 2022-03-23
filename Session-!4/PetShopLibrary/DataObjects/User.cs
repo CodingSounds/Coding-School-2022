@@ -8,8 +8,9 @@ namespace PetShopLibrary.DataObjects
 {
     public class User
     {
+        public PetShopClass PetShopClass { get; set; }
         public string Username { get; set; }
-
+        public Guid ID { get; set; }
         public string Password { get; set; }
         public bool Auth()
         {
@@ -22,6 +23,7 @@ namespace PetShopLibrary.DataObjects
 
         public User()
         {
+            ID = Guid.NewGuid();
 
         }
 

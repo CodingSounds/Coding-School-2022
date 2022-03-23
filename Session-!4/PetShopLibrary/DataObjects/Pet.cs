@@ -40,7 +40,9 @@ public class Pet : Product, IPet
     public PetStatus HealthStatus { get; set; }
     public AnimalType AnimalType { get; set; }
     public string Breed { get; set; }
-    
+
+    //public PetShopClass PetShopClass { get; set; }
+
 
     public Pet()
 	{

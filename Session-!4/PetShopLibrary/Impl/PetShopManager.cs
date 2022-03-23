@@ -11,14 +11,14 @@ namespace PetShopLibrary
     public class PetShopManager
     {
         private const string FILE_NAME = "petShop.json";
-        private PetShop _petShop;
+        private PetShopClass _petShop;
         
         public PetShopManager()
         {
             Load();
         }
 
-        public PetShopManager(PetShop petShop)
+        public PetShopManager(PetShopClass petShop)
         {
             _petShop = petShop;
         }
@@ -28,11 +28,11 @@ namespace PetShopLibrary
             if (File.Exists(FILE_NAME))
             {
                 string text = File.ReadAllText(FILE_NAME, Encoding.UTF8);
-                _petShop = JsonSerializer.Deserialize<PetShop>(text);
+                _petShop = JsonSerializer.Deserialize<PetShopClass>(text);
                 return;
             }
 
-            _petShop = new PetShop();
+            _petShop = new PetShopClass();
             
         }
 

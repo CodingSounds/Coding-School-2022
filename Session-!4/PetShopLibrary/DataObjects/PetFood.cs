@@ -20,6 +20,8 @@ public interface IFood
 
 public class PetFood : Product, IFood
 {
+
+    //public PetShopClass PetShopClass { get; set; }
     public FoodType Type { get; set; }
 
     public string Brand { get; set; }

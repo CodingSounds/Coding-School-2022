@@ -1,10 +1,13 @@
-﻿using System;
+﻿using PetShopLibrary;
+using System;
 
 
 public class Customer : Person
 {
     public string PhoneNumber { get; set; }
     public string Tin { get; set; }
+
+    public PetShopClass PetShopClass { get;set; }
 
     public Customer()
     {

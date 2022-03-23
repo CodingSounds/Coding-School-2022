@@ -1,3 +1,4 @@
+using PetShop.EF.Repository;
 using PetShopLibrary;
 
 namespace Session_11
@@ -5,10 +6,19 @@ namespace Session_11
     public partial class PetShopForm : Form
     {
         private PetShopManager _petShop;
+
+        private readonly IEntityRepo<PetShopClass> _petShopClassRepo;
         public PetShopForm(PetShopManager petShop)
         {
             InitializeComponent();
             _petShop = petShop;
+            this.CenterToScreen();
+        }
+
+        public PetShopForm(IEntityRepo<PetShopClass> PetShopClassRepo)
+        {
+            InitializeComponent();
+            _petShopClassRepo = PetShopClassRepo;
             this.CenterToScreen();
         }
         public PetShopForm()
@@ -16,8 +26,15 @@ namespace Session_11
 
         }
 
+       /* private void RefreshTodos()
+        {
+            _petShopClassRepo = _petShopClassRepo.GetAll();
+            
+        }
+*/
         private void Form1_Load(object sender, EventArgs e)
         {
+
                    
         }
 
