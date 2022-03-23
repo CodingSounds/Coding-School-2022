@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PetShop.EF.Repository;
 using PetShopLibrary;
 using PetShopLibrary.DataObjects;
 
@@ -299,7 +300,8 @@ namespace Session_11
         private void SaveCustomer()
         {
 
-            _petshopManager.Save();
+            _petshopManager.SaveCustomers(CustomerList);
+            gridCustomerList.Refresh();
 
 
         }
@@ -350,7 +352,7 @@ namespace Session_11
                 CustomerList = x.GetCustomers();
                 gridCustomerList.Refresh();
                 x.Save();
-                _petshopManager.Load();
+                //_petshopManager.Load();
 
 
 

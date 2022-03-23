@@ -2,7 +2,7 @@
 {
     public interface ITransaction
     {
-        public PetShopClass PetShopClass { get; set; }
+        //public PetShopClass PetShopClass { get; set; }
         Guid ID { get; }
         DateTime Date { get; }
         Guid CustomerID { get; set; }

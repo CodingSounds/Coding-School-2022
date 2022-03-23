@@ -1,4 +1,5 @@
-﻿using PetShopLibrary;
+﻿using PetShop.EF.Repository;
+using PetShopLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,7 +60,7 @@ namespace Session_11
                     };
                     _petShop.Add(food);
                 }                
-                _petShop.Save();
+                //_petShop.Save();
                 this.Close();
             }
             else

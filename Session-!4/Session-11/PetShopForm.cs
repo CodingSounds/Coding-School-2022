@@ -1,26 +1,27 @@
 using PetShop.EF.Repository;
 using PetShopLibrary;
 
+
 namespace Session_11
 {
     public partial class PetShopForm : Form
     {
-        private PetShopManager _petShop;
+        private  PetShopManager _petShop;
 
         private readonly IEntityRepo<PetShopClass> _petShopClassRepo;
-        public PetShopForm(PetShopManager petShop)
+        public PetShopForm( PetShopManager petShop)
         {
             InitializeComponent();
             _petShop = petShop;
             this.CenterToScreen();
         }
 
-        public PetShopForm(IEntityRepo<PetShopClass> PetShopClassRepo)
+       /* public PetShopForm(IEntityRepo<PetShopClass> PetShopClassRepo)
         {
             InitializeComponent();
             _petShopClassRepo = PetShopClassRepo;
             this.CenterToScreen();
-        }
+        }*/
         public PetShopForm()
         {
 
@@ -44,12 +45,13 @@ namespace Session_11
             PetForm petForm = new PetForm(_petShop);
             petForm.ShowDialog();
         }
-
         private void transactionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TransactionForm transactionForm = new TransactionForm(_petShop);
             transactionForm.ShowDialog();
         }
+
+
 
         private void petFoodsToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PetShop.EF.Repository;
 using PetShopLibrary;
 
 namespace Session_11
@@ -65,7 +66,7 @@ namespace Session_11
 
                     
                     _petShop.Add(pet);
-                    _petShop.Save();
+                    //_petShop.Save();
                     
                 }
                 else
@@ -79,7 +80,7 @@ namespace Session_11
 
             }
             MessageBox.Show("Saved");
-
+            
             this.Close();
 
         }
@@ -87,6 +88,7 @@ namespace Session_11
         private void btnCancel_Click(object sender, EventArgs e)
         {
             
+
             this.Close();
         }
 

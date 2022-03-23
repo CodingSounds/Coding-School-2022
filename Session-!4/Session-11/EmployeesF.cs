@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Columns;
+using PetShop.EF.Repository;
 using PetShopLibrary;
 
 namespace Session_11
@@ -51,7 +52,7 @@ namespace Session_11
             Employee employee = grvEmployees.GetFocusedRow() as Employee;
             if (employee == null || employee.EmpType.Equals(EmployeeType.Manager) || employee.EmpType.Equals(EmployeeType.CEO)) return;
             petShopManager.Delete(employee);
-            petShopManager.Save();
+            //petShopManager.Save(); no need
             grvEmployees.RefreshData();
         }
 
@@ -63,8 +64,8 @@ namespace Session_11
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            petShopManager.Save();
-            MessageBox.Show("Saved");
+            //petShopManager.Save();//does nothing
+            //MessageBox.Show("Saved");
         }
     }
 }

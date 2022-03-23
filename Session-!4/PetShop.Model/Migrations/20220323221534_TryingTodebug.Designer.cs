@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PetShop.EF.Context;
 
@@ -11,9 +12,10 @@ using PetShop.EF.Context;
 namespace PetShop.EF.Migrations
 {
     [DbContext(typeof(PetShopAppContext))]
-    partial class PetShopAppContextModelSnapshot : ModelSnapshot
+    [Migration("20220323221534_TryingTodebug")]
+    partial class TryingTodebug
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +38,7 @@ namespace PetShop.EF.Migrations
                     b.Property<int>("ObjectStatus")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("PetShopClassId")
+                    b.Property<Guid>("PetShopClassId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("PhoneNumber")
@@ -78,7 +80,7 @@ namespace PetShop.EF.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("PetShopClassId")
+                    b.Property<Guid>("PetShopClassId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Salary")
@@ -252,16 +254,24 @@ namespace PetShop.EF.Migrations
 
             modelBuilder.Entity("Customer", b =>
                 {
-                    b.HasOne("PetShopLibrary.PetShopClass", null)
+                    b.HasOne("PetShopLibrary.PetShopClass", "PetShopClass")
                         .WithMany("Customers")
-                        .HasForeignKey("PetShopClassId");
+                        .HasForeignKey("PetShopClassId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PetShopClass");
                 });
 
             modelBuilder.Entity("Employee", b =>
                 {
-                    b.HasOne("PetShopLibrary.PetShopClass", null)
+                    b.HasOne("PetShopLibrary.PetShopClass", "PetShopClass")
                         .WithMany("Employees")
-                        .HasForeignKey("PetShopClassId");
+                        .HasForeignKey("PetShopClassId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PetShopClass");
                 });
 
             modelBuilder.Entity("Pet", b =>

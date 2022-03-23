@@ -7,7 +7,7 @@ public class Customer : Person
     public string PhoneNumber { get; set; }
     public string Tin { get; set; }
 
-    public PetShopClass PetShopClass { get;set; }
+    //public PetShopClass PetShopClass { get;set; }
 
     public Customer()
     {

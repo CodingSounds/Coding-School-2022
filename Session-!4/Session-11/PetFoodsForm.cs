@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Columns;
+using PetShop.EF.Repository;
 using PetShopLibrary;
 
 namespace Session_11
@@ -43,7 +44,7 @@ namespace Session_11
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            _petShop.Save();
+            //_petShop.Save();
             MessageBox.Show("Saved");
         }
 
@@ -52,7 +53,7 @@ namespace Session_11
             PetFood petFood = grvPetFoods.GetFocusedRow() as PetFood;
             if (petFood == null) return;
             _petShop.Delete(petFood);
-            _petShop.Save();
+            //_petShop.Save();
             grvPetFoods.RefreshData();
         }
 

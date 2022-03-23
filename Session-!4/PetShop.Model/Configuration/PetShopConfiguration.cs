@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
@@ -24,14 +24,15 @@ namespace PetShop.EF.Configuration
 
             //builder.HasOne(petShopClass=> petShopClass.PetFoods).WithOne(petFood=> petFood.)
 
-/*
+*//*
             builder.Property(PetShopClass => PetShopClass.).HasMaxLength(100);
 
             builder.Property(PetShopClass => PetShopClass.Name).HasMaxLength(100);
 
 
-            builder.Property(PetShopClass => PetShopClass.Tin).HasMaxLength(10);*/
+            builder.Property(PetShopClass => PetShopClass.Tin).HasMaxLength(10);*//*
 
         }
     }
 }
+*/

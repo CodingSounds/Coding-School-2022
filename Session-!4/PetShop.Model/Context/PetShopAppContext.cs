@@ -16,11 +16,13 @@ namespace PetShop.EF.Context
         public DbSet<Employee> Employees { get; set; }
 
         public DbSet<Pet> Pets { get; set; }
-        public DbSet<PetFood> PetFood { get; set; }
+        public DbSet<PetFood> PetFoods { get; set; }
         public DbSet<User> Users { get; set; }
 
-        public DbSet<PetShopClass> PetShopClasses { get; set; }
-        
+        public DbSet<Transaction> Transactions { get; set; }
+
+        //public DbSet<PetShopClass> PetShopClasses { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

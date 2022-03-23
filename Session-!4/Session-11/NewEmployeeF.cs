@@ -1,4 +1,5 @@
-﻿using PetShopLibrary;
+﻿using PetShop.EF.Repository;
+using PetShopLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,7 +55,7 @@ namespace Session_11
                 };
                 
                 _petShopManager.Add(emp);
-                _petShopManager.Save();
+                //_petShopManager.Save();
                 this.Close();
             }
             else
