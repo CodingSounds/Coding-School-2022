@@ -1,0 +1,20 @@
+1)Yes You can set inside the request header Referrer-Policy to no-referrer to not give any part of your url or for example to origin to get your respond in a different place.
+
+2){image/jpeg} - Content-Type
+
+3)Inside  rewuest Header,inside cache control set max-age=86400 (1 day).
+
+4)Yes we can but it is bad practise.
+
+5)Yes a  app that does only send information and does not interact with the user. It can be done but it is of almost no use.
+
+6)400 Bad request.
+
+7)500 Internal Server Error. If we knew more information we could use 5.. something.
+
+8)You should not log in with get request even though you can do it, it is a really bad practice. You use post request(as you do with forms).
+
+9)-Put modifies a single resource/information, Post add a child resource/information under resources collection.
+  -Put can be cached Post not.
+  
+10)Post method.
